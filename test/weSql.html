@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 创建并开启一个数据库
+        var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+        var msg;
+        db.transaction(function (tx) {
+            // 创建一个叫做的 LOGS 的表
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+            // 插入数据
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "foobar")');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "logmsg")');
+            // 插入数据时还可以插入动态值
+            tx.executeSql('INSERT INTO LOGS (id,log) VALUES (?, ?'), [3, 'message'];
+            msg = '<p>Log message created and row inserted.</p>';
+            document.querySelector('#status').innerHTML =  msg;
+        });
+
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+                var len = results.rows.length, i;
+                msg = "<p>Found rows: " + len + "</p>";
+                document.querySelector('#status').innerHTML +=  msg;
+                for (i = 0; i < len; i++){
+                    msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+                    document.querySelector('#status').innerHTML +=  msg;
+                }
+            }, null);
+        });
+    </script>
+</head>
+<body>
+    <div id="status" name="status">Status Message</div>
+</body>
+</html>

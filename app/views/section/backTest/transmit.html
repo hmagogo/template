@@ -1,0 +1,16 @@
+<header>
+    <h1 class="h3" style="font-weight:300;">导出过程详情</h1>
+</header>
+
+<section ng-controller="transmitController">
+    <div class="panel">
+        <div class="panel-heading">
+            <button class="btn btn-success" ng-click="export()">导出</button>
+            <!--<button class="btn btn-success" ng-click="testIcinga()">测试icinga</button>-->
+        </div>
+        <div class="panel-body" style="height:520px;">
+            <textarea style="max-width:750px;max-height:350px;min-width:750px;min-height:350px;" wrap="physical"
+                     ng-model="dataArea"></textarea>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<div class="text-center">
+    <ul class="pagination">
+        <li ng-class="pageHome"><a href ng-click="setCurrentPage(1)" >&lt;&lt;</a></li>
+        <li ng-class="pagePrevious"><a href ng-click="setCurrentPage(currentPage-1)">&lt;</a></li>
+        <li ng-repeat="pageno in pages">
+            <a href ng-click="setCurrentPage(pageno)">{{pageno}}</a>
+        </li>
+        <li ng-class="pageNext"><a href ng-click="setCurrentPage(currentPage+1)">&gt;</a></li>
+        <li ng-class="pageTrailer"><a href ng-click="setCurrentPage(totalPage)">&gt;&gt;</a></li>
+        <b style="height: 40px; line-height:40px;">
+            &nbsp;第{{currentPage}}页&nbsp;共{{totalPage == 0 ? 1 : totalPage}}页&nbsp;共{{totalCount}}条&nbsp;转到
+            <input type="text" class="form-control" ng-model="GO" style="display:inline;width: 35px;height:27px;padding:6px 5px;"/>页&nbsp;
+            <button class="btn btn-sm btn-primary" ng-click="setCurrentPage(GO)">GO</button>
+        </b>
+    </ul>
+</div>

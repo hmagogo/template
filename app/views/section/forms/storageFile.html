@@ -1,0 +1,37 @@
+<header>
+    <h1 class="h3">查看上传文件</h1>
+</header>
+
+<section ng-controller="storageFile as sf">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="h4">文件列表</span>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <th width="50%">文件名</th>
+                            <th>文件大小</th>
+                            <th>上传时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="f in sf.serverFiles">
+                            <td widtd="50%">{{f.fileName}}</td>
+                            <td>{{f.size | byteAdaptiveUnit}}</td>
+                            <td>{{f.ctime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                            <td>
+                                <span class="glyphicon glyphicon-cloud-download text-green cursor-po" ng-click="sf.fileDownload()"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

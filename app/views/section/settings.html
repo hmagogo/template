@@ -1,0 +1,29 @@
+<button class="btn no-shadow" ui-toggle-class="active" target=".settings">
+    <i class="glyphicon glyphicon-cog spin"></i>
+</button>
+<div class="panel-heading">
+    Settings
+</div>
+<div class="panel panel-body">
+    <div class="m-bottom">
+        <label class="switch pull-right">
+            <input type="checkbox" ng-model="app.settings.headerFixed"/>
+            <i></i>
+        </label>
+        Fixed header
+    </div>
+    <div class="m-bottom">
+        <label class="switch pull-right">
+            <input type="checkbox" ng-model="app.settings.asideFixed"/>
+            <i></i>
+        </label>
+        Fixed aside
+    </div>
+    <div class="m-bottom">
+        <label class="switch pull-right">
+            <input type="checkbox" ng-model="app.settings.asideFolded"/>
+            <i></i>
+        </label>
+        Folded aside
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375"/>
+    <title>Test Web</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    .bg_color {
+        background-color: #00b3ee;
+        width:375px;
+        height:627px;
+    }
+</style>
+<script>
+    console.log(document.cookie)
+
+    (function () {
+        window.config = {
+            'socketio':'192.168.215.133:9999'
+        }
+    })();
+
+    console.log(window.config.socketio)
+
+
+    // IE innerText     火狐 textContent
+    var removeIP = (typeof currentParent.textContent == "string") ? 
+        currentParent.textContent : currentParent.innerText;
+</script>
+<body>
+    <div class="bg_color"/>
+</body>
+</html>

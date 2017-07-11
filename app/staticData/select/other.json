@@ -1,0 +1,23 @@
+{
+  "Australian": {
+    "Cassiel": [23, "新西兰"],
+    "Ulrica": [33, "瓦努阿图"],
+    "Quella": [27, "帕劳"],
+    "Cecilia": [27, "图瓦卢"],
+    "Desdemona": [30, "萨摩亚"],
+    "Indira": [29, "斐济群岛"],
+    "Louise": [27, "百慕大"],
+    "Felicia": [29, "格林纳达"],
+    "Danae": [31, "牙买加"]
+  },
+  "cities": [
+    {"id": 1, "name": "黄浦", "group": "上海"},
+    {"id": 2, "name": "卢湾", "group": "上海"},
+    {"id": 3, "name": "深圳", "group": "广东"},
+    {"id": 4, "name": "广州", "group": "广东"},
+    {"id": 5, "name": "阳江", "group": "广东"},
+    {"id": 6, "name": "湛江", "group": "广东"},
+    {"id": 7, "name": "茂名", "group": "广东"},
+    {"id": 8, "name": "梅州", "group": "广东"}
+  ]
+}

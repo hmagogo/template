@@ -1,0 +1,134 @@
+<header>
+    <h1 class="h3">Angular Fixed Header Table</h1>
+</header>
+
+<section>
+    <div class="panel">
+        <div class="panel-body">
+            <table class="table table-bordered" fixed-header style="height: 400px ">
+                <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                    <th>Header 4</th>
+                    <th>Header 5</th>
+                    <th>Header 6</th>
+                    <th>Header 7</th>
+                    <th>Header 8</th>
+                    <th>Header 9</th>
+                    <th>Header 10</th>
+                    <th>Header 11</th>
+                    <th>Header 12</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+                    <td>Row {{item}} Col 1</td>
+                    <td>Row {{item}} Col 2</td>
+                    <td>Row {{item}} Col 3</td>
+                    <td>Row {{item}} Col 4</td>
+                    <td>Row {{item}} Col 5</td>
+                    <td>Row {{item}} Col 6</td>
+                    <td>Row {{item}} Col 7</td>
+                    <td>Row {{item}} Col 8</td>
+                    <td>Row {{item}} Col 9</td>
+                    <td>Row {{item}} Col 10</td>
+                    <td>Row {{item}} Col 11</td>
+                    <td>Row {{item}} Col 12</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-body">
+            <div style="width: 900px; height: 400px;">
+                <div class="table-wrapper default" style="width: 100%; height: 100%">
+                    <div class="fixed-column">
+                        <div class="thead">
+                            <table class="fht-table fancyTable">
+                                <thead>
+                                    <tr>
+                                        <th class="th-c">fixed head 1<div style="width: 90px;"></div></th>
+                                        <th class="th-c">fixed head 2<div style="width: 90px;"></div></th>
+                                        <th class="th-c">fixed head 3<div style="width: 90px;"></div></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="tbody" style="height: 335px;">
+                            <table class="fht-table fancyTable">
+                                <tbody>
+                                    <tr ng-repeat="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+                                        <td style="background-color: white;">fixed {{item}} Col 1<div style="width: 90px;"></div></td>
+                                        <td style="background-color: white;">fixed {{item}} Col 2<div style="width: 90px;"></div></td>
+                                        <td style="background-color: white;">fixed {{item}} Col 3<div style="width: 90px;"></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tfoot"></div>
+                    </div>
+                    <div class="fixed-body" style="width: 600px">
+                        <div class="thead">
+                            <table class="fht-table fancyTable" >
+                                <thead>
+                                    <tr>
+                                        <th>fixed head 1<div style="width: 90px;"></div></th>
+                                        <th>fixed head 2<div style="width: 90px;"></div></th>
+                                        <th>fixed head 3<div style="width: 90px;"></div></th>
+                                        <th>Header 4    <div style="width: 90px;"></div></th>
+                                        <th>Header 5    <div style="width: 90px;"></div></th>
+                                        <th>Header 6    <div style="width: 90px;"></div></th>
+                                        <th>Header 7    <div style="width: 90px;"></div></th>
+                                        <th>Header 8    <div style="width: 90px;"></div></th>
+                                        <th>Header 9    <div style="width: 90px;"></div></th>
+                                        <th>Header 10   <div style="width: 90px;"></div></th>
+                                        <th>Header 11   <div style="width: 90px;"></div></th>
+                                        <th>Header 12   <div style="width: 90px;"></div></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="tbody" style="height: 350px" id="fixedCol" ng-fixed-col>
+                            <table class="fht-table fancyTable" style="margin-top: -30px">
+                                <thead>
+                                    <tr>
+                                        <th>fixed head 1<div style="width: 90px;"></div></th>
+                                        <th>fixed head 2<div style="width: 90px;"></div></th>
+                                        <th>fixed head 3<div style="width: 90px;"></div></th>
+                                        <th>Header 4    <div style="width: 90px;"></div></th>
+                                        <th>Header 5    <div style="width: 90px;"></div></th>
+                                        <th>Header 6    <div style="width: 90px;"></div></th>
+                                        <th>Header 7    <div style="width: 90px;"></div></th>
+                                        <th>Header 8    <div style="width: 90px;"></div></th>
+                                        <th>Header 9    <div style="width: 90px;"></div></th>
+                                        <th>Header 10   <div style="width: 90px;"></div></th>
+                                        <th>Header 11   <div style="width: 90px;"></div></th>
+                                        <th>Header 12   <div style="width: 90px;"></div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+                                        <td>fixed {{item}} Col 1</td>
+                                        <td>fixed {{item}} Col 2</td>
+                                        <td>fixed {{item}} Col 3</td>
+                                        <td>Row {{item}} Col 4</td>
+                                        <td>Row {{item}} Col 5</td>
+                                        <td>Row {{item}} Col 6</td>
+                                        <td>Row {{item}} Col 7</td>
+                                        <td>Row {{item}} Col 8</td>
+                                        <td>Row {{item}} Col 9</td>
+                                        <td>Row {{item}} Col 10</td>
+                                        <td>Row {{item}} Col 11</td>
+                                        <td>Row {{item}} Col 12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tfoot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

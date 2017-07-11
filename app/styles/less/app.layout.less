@@ -1,0 +1,211 @@
+// 页面布局样式
+.app {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        display: block;
+        width: inherit;
+        background-color: #f0f3f4;
+        border: inherit;
+        content: "";
+    }
+}
+
+.app-header {
+    border: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    background-color:#ffffff;
+    z-index: 1025;
+    height:50px;
+
+    .nav-header {
+        width:200px;
+        background-color:@color-black;
+        a {
+            font-size:20px;
+            width:inherit;
+            padding-left:20px;
+            color:#c4d0d9 !important;
+        }
+    }
+    .nav-header-collapse {
+        margin-left: 200px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+    }
+}
+
+.app-aside {
+    position: absolute;
+    float: left;
+    top: 50px;
+    bottom: 0;
+    width: 200px;
+    
+    &:before {
+        z-index: -1;
+        width: inherit;
+        background-color: inherit;
+        border: inherit;
+        content: "";
+    }
+    .aside-wrap {
+        border-radius:0px;
+        background-color: @color-black;
+        border:0px;
+        height: 100%;
+        width: inherit;
+        padding-top:20px;
+        margin-bottom:0px;
+        .font-bold {
+           font-weight:700;
+        }
+    }
+    ul {
+        li {
+            width: 200px;
+
+            &:hover, &:focus{
+                background-color: darken(@color-black, 3%);
+            }
+        }
+        &.nav li a {
+            color: #869fb1;
+            position: relative;
+            display: block;
+            padding: 10px 20px;
+            text-transform: none;
+            -webkit-transition: background-color 0.2s ease-in-out 0s;
+            transition: background-color 0.2s ease-in-out 0s;
+            i {
+                padding-right: 15px;
+            }
+        }
+
+        .nav-hidden li a{
+            padding-left: 53px;
+        }
+
+        .li-title {
+            margin: 5px 0px 5px 15px;
+            font-size: 12px;
+            color: #5c798f;
+
+            &:hover, &:focus{
+                background-color: inherit;
+            }
+        }
+    }
+}
+
+.active {
+    span {
+        .glyphicon-chevron-right {
+          display: none ;
+        }
+        .glyphicon-chevron-down {
+          padding-top: 4px;
+          visibility: inherit !important;
+          display: block !important;
+        }
+    }
+    & .nav-hidden,
+    & li:hover .nav-hidden,
+    & li:focus .nav-hidden,
+    & li:active .nav-hidden {
+        background-color: #131e26;
+        height: auto !important;
+        margin-left: 0;
+        overflow: auto;
+        opacity: 1;
+    }
+    .nav-hidden a:hover,
+    .nav-hidden a:focus,
+    .nav-hidden a:active {
+        color: @color-light;
+        background-color: darken(@color-black, 3%);
+    }
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: darken(@color-black, 3%);
+}
+
+.app-section {
+    margin-left:200px;
+    padding-bottom: 50px;
+    header {
+        background-color: #f6f8f8;
+        padding: 20px;
+        border-bottom: 1px solid #dee5e7;
+        h1 {
+            margin: 0;
+            color: #58666e;
+        }
+    }
+    section {
+        padding: 20px;
+    }
+}
+
+.app-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1005;
+    margin-left:200px;
+    background-color: #edf1f2;
+    padding:15px;
+    border-top: 1px solid #dee5e7;
+}
+      // ************************* 固定组件的样式  *************************
+.app-header-fixed {
+    padding-top: 50px;
+    .app-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.app-aside-fixed {
+  .app-header {
+    .nav-header {
+      position: fixed;
+    }
+  }
+  .app-aside {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 200px;
+    overflow: hidden;
+  }
+}
+
+.app-aside-folded {
+    .hidden-folded {
+        display: none !important;
+    }
+    .app-aside,
+    .nav-header {
+        width: 60px;
+    }
+    .nav-header-collapse,
+    .app-section,
+    .app-footer {
+        margin-left: 60px;
+    }
+}

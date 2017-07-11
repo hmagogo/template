@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375"/>
+    <title>html5 canvas</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <canvas id="round" width="500" height="500"></canvas>
+
+    <script type="text/javascript">
+		// 第一步：获取canvas元素
+	    var myCanvas = document.getElementById('myCanvas');
+	    // 第二步：获取上下文
+	    var canvasContext = myCanvas.getContext('2d');
+	    // 第三步：指定绘制线样式、颜色
+	    canvasContext.strokeStyle = "green";
+	    // 第四步：绘制矩形，只有线。内容是空的
+	    canvasContext.strokeRect(10, 10, 190, 100);
+
+	    //以下演示填充矩形。
+        canvasContext.fillStyle = "blue";
+        canvasContext.fillRect(110, 110, 100, 100);
+
+
+        // 圆
+        var round = document.getElementById('round');
+        var roundContext = round.getContext('2d');
+        roundContext.beginPath();
+        roundContext.arc(200, 150, 100, 0, Math.PI * 2, true);
+        // 不关闭路径路径会一直保留下去，当然也可以利用这个特点做出意想不到的效果
+        roundContext.closePath();
+        roundContext.fillStyle = 'rgba(0,255,0,0.25)';   //填充的样式
+        roundContext.fill();   // 填充
+	</script>
+</body>
+</html>

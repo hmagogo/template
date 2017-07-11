@@ -1,0 +1,128 @@
+// 重写
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  background-color: lighten(@color-light, 1%);
+}
+
+body {
+  font-family: @font-family;
+  font-size: @px-14;
+  line-height: @line-height-base;
+  color: @color-dark;
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+.table {
+  > thead > tr {
+    background-color: lighten(@color-blue, 33%);
+  }
+}
+
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: @color-white;
+  }
+}
+
+.table-striped {
+  > tbody > tr:nth-of-type(even) {
+    background-color: lighten(@color-light, 3%);
+  }
+}
+
+.table-hover {
+  > tbody > tr:hover {
+    background-color: lighten(@color-yellow, 32%);
+  }
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+.m-top {
+  margin-top: 5px;
+}
+
+.m-bottom {
+  margin-bottom: 10px;
+}
+
+.text-red {
+  color: @color-red;
+}
+
+.text-green {
+  color: @color-green;
+}
+
+.text-yellow {
+  color: @color-yellow;
+}
+
+.text-purple {
+  color: @color-purple;
+}
+
+.text-white {
+  color: @color-white;
+}
+
+.text-blue {
+  color: @color-blue;
+}
+
+.no-shadow {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.nav-hidden {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-left: -20px;
+  transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+}
+
+.btn-mi {
+  padding: 0px 5px;
+}
+
+.modal-body-padding {
+    padding: 10px 35px;
+}
+
+.breadcrumb {
+    background-color: #fff;
+    padding: 0px 5px;
+    color: #96A6AF;
+
+    > li + li:before {
+        padding: 0 5px;
+        color: #ccc;
+        content: "\2022\00a0";
+    }
+
+    > .active {
+        color: #353535;
+    }
+
+    .hideSub {
+        display:none;
+        cursor: pointer;
+        margin-left: 6px;
+    }
+
+    .activeBottom {
+        color: #353535;
+        border-bottom: 2px solid rgb(239, 89, 90);
+    }
+}

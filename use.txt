@@ -1,0 +1,16 @@
+--------------------------------------------- 使 用 ---------------------------------------------
+
+Sublime Text 3上集成JSHint检查
+http://www.cnblogs.com/ron123/p/5344107.html
+http://blog.csdn.net/kelay06/article/details/45538321
+https://gaohaoyang.github.io/2015/03/26/sublimeLinter/
+
+package.js 可改 node 启动方式
+"start": "supervisor ./api_server/bin/www"    //会随时启动 node 服务，上传文件就会中断，最好使用下面方式启动 node
+"start": "node ./api_server/bin/www"          //启动 node 服务，只启动一次，不便以调试，但对上传文件不会随时中断。
+
+登录判断
+http://www.brafox.com/post/2015/javascript/angularjs/angularjs-router-interceptor.html
+
+Angular拦截器
+https://my.oschina.net/ilivebox/blog/290881?p=1

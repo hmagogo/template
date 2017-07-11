@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var a = "global var";
+
+        function foo(){
+            console.log(a);
+        }
+
+        function outerFunc(){
+            var b = "var in outerFunc";
+            console.log(b);
+
+            function innerFunc(){
+                var c = "var in innerFunc";
+                console.log(c);
+                foo();
+            }
+
+            innerFunc();
+        }
+
+
+        outerFunc();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

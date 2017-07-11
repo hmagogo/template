@@ -1,0 +1,63 @@
+
+.table-wrapper {
+    &.default {
+        top: 0;
+        left: 0;
+        // position: absolute;
+    }
+
+    &,
+    .thead,
+    .tfoot,
+    .fixed-column .tbody,
+    .fixed-body .tbody,
+    .tbody {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .fixed-column {
+        z-index: 1001;
+    }
+    
+    .fixed-column,
+    .fixed-body {
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+
+    .fixed-body .tbody,
+    .tbody {
+        overflow: auto;
+    }
+
+    .fancyTable td,
+    .fancyTable th {
+        border: 1px solid #778899;
+        padding: 5px;
+    }
+
+    .th-c {
+        background-color: white;
+    }
+}
+
+.fht-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    &,
+    thead,
+    tfoot,
+    tbody,
+    tr,
+    th,
+    td {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: top;
+    }
+}

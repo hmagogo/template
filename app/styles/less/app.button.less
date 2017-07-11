@@ -1,0 +1,32 @@
+.btn {
+  &:focus, &:active:focus, &.active:focus, &.focus, &.focus:active, &.active.focus {
+     outline: none;  // 可去除 浏览器中点击出现的边框。如：虚框，蓝框 ...
+   }
+}
+.btn-radius {
+  margin: 0px 10px;
+  padding: 6px 24px;
+  border-color: #bababa;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: @color-white;
+
+  &:hover {
+    color: @color-blue;
+    border-color: @color-blue;
+  }
+}
+
+.btn-upload {
+  position: relative;
+
+  input[type=file] {
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

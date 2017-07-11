@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="description" content="">
+    <!-- 网页宽度采用设备宽度，缩放比例为1，不允许用户缩放操作 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css" />
+    <link rel="stylesheet" href="bower_components/multiselect/css/multi-select.css" />
+    <!-- endbower -->
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="styles/font.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/animate.css" type="text/css"/>    <!--引入自定义动画样式-->
+    <link rel="stylesheet" href="styles/app.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/ipStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/zxx.lib.css" type="text/css"/>
+</head>
+<body ng-controller="mainController">
+
+    <!-- 过时的 IE 消息 -->
+    <!--[if lt IE 9]>
+        <div class="ie-block">
+            <h1 class="Ops">Ooops!</h1>
+            <p>You are using an outdated version of Internet Explorer, upgrade to any of the following web browser in order to access the maximum functionality of this website. </p>
+            <ul class="browsers">
+                <li>
+                    <a href="https://www.google.com/intl/en/chrome/browser/">
+                        <img src="images/browsers/chrome.png" alt="">
+                        <div>Google Chrome</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.mozilla.org/en-US/firefox/new/">
+                        <img src="images/browsers/firefox.png" alt="">
+                        <div>Mozilla Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com/computer/windows">
+                        <img src="images/browsers/opera.png" alt="">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://safari.en.softonic.com/">
+                        <img src="images/browsers/safari.png" alt="">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/downloads/ie-10/worldwide-languages">
+                        <img src="images/browsers/ie.png" alt="">
+                        <div>Internet Explorer(New)</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <![endif]-->
+
+    <div class="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed,
+        'app-aside-folded':app.settings.asideFolded}" ui-view></div>
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="bower_components/php-date-formatter/js/php-date-formatter.js"></script>
+    <script src="bower_components/datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/jquery-tabledit/jquery.tabledit.js"></script>
+    <script src="bower_components/jquery.fixedheadertable/jquery.fixedheadertable.js"></script>
+    <script src="bower_components/angu-fixed-header-table/angu-fixed-header-table.js"></script>
+    <script src="bower_components/multiselect/js/jquery.multi-select.js"></script>
+    <script src="bower_components/excellentexport/excellentexport.js"></script>
+    <script src="bower_components/fex-webuploader/dist/webuploader.js"></script>
+    <!-- endbower -->
+
+    <!-- 自定义的 Js库 -->
+    <script src="scripts/util/public.min.js"></script>
+
+    <!-- 此处app.js是angularjs的初始化的组件注入，必须第一个引入，后面引入JS也需要注意js引入顺序 -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/util/common.js"></script>
+    <script src="scripts/util/jsMap.js"></script>
+    <script src="scripts/config/config.js"></script>
+    <script src="scripts/config/requestUrl.js"></script>
+    <script src="scripts/config/constant.js"></script>
+    <script src="scripts/config/lazyload.js"></script>
+    <script src="scripts/config/router.js"></script>
+    <script src="scripts/services/ui-load.js"></script>
+    <script src="scripts/directive/ui-jq.js"></script>
+    <script src="scripts/directive/ui-nav.js"></script>
+    <script src="scripts/directive/ui-toggleClass.js"></script>
+    <script src="scripts/directive/ui-scroll.js"></script>
+    <script src="scripts/directive/ipCommand.js"></script>
+    <script src="scripts/directive/paging.js"></script>
+    <script src="scripts/directive/ngForModel.js"></script>
+    <script src="scripts/directive/ngDropdown.js"></script>
+    <script src="scripts/directive/ngStopDropdown.js"></script>
+    <script src="scripts/directive/ngFixedCol.js"></script>
+    <script src="scripts/directive/multSelect.js"></script>
+    <script src="scripts/directive/ngWebuploader.js"></script>
+    <!--<script src="scripts/directive/ngDatepicker.js"></script>-->
+    <script src="scripts/filters/generalFilters.js"></script>
+    <script src="scripts/controller/main.js"></script>
+    <!-- Lazy loading -->
+</body>
+</html>

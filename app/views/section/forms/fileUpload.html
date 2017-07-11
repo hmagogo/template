@@ -1,0 +1,58 @@
+<header>
+    <h1 class="h3">file upload</h1>
+</header>
+
+<section ng-controller="fileUploadCtrl" uploader="uploader" filters="customFilter">
+    <div style="height:520px; width:220px; position:absolute; border-right:1px solid #dee5e7;">
+        <div style="margin:15px 5px;">
+            <h4 style="display:inline; margin-right:10px;">Select files</h4>
+            <i>-- 选择文件</i>
+        </div>
+        <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+        <p>单个文件上传</p>
+        <button class="btn btn-info btn-sm btn-upload" style="width: 84px;">
+            <input type="file" nv-file-select uploader="uploader"/> 上传文件
+        </button>
+
+        <p style="margin-top:30px;">多个文件上传</p>
+        <button class="btn btn-info btn-sm btn-upload" style="width: 84px;">
+            <input type="file" nv-file-select uploader="uploader"/> 上传文件
+        </button>
+    </div>
+    <div style="height:520px;margin-left:220px;padding:0px 10px;">
+        <div>
+            <span class="pull-right m-top">文件数量：{{ uploader.queue.length }}</span>
+            <h3>文件列表</h3>
+        </div>
+        <div>
+            <table class="table table-condensed" style="background-color: #ffffff;border: 1px solid #dee5e7;">
+                <thead>
+                    <tr>
+                        <th width="50%">文件名</th>
+                        <th>文件大小</th>
+                        <th>上传进度</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in uploader.queue">
+                    <td><strong>{{ item.file.name }}</strong></td>
+                    <td ng-show="uploader.isHTML5">{{ item.file.size/1024/1024 | number: 2 }} MB</td>
+                    <td ng-show="uploader.isHTML5">
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info" role="progressbar" ng-style="{'width': item.progress + '%'}"></div>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">上传</button>
+                        <button type="button" class="btn btn-default btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">取消</button>
+                        <button type="button" class="btn btn-default btn-xs" ng-click="item.remove()">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

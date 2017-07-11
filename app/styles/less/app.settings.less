@@ -1,0 +1,75 @@
+.settings {
+    position: fixed;
+    top: 120px;
+    right: -240px;
+    z-index: 1050;
+    width: 240px;
+    -webkit-transition: right 0.2s;
+    transition: right 0.2s;
+    &.active {
+       right: -1px;
+    }
+    > .btn {
+        position: absolute;
+        top: -1px;
+        left: -42px;
+        padding: 10px 15px;
+        background: #f5f5f5 !important;
+        border-color: #dee5e7;
+        border-right-width: 0;
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    background-color: #27c24c;
+    border-radius: 30px;
+
+    input {
+        position: absolute;
+        opacity: 0;                 //  所有浏览器有效: 透明度 0
+        filter: alpha(opacity=0);  // 仅IE有效: 透明度 0
+    }
+    i:before {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        background-color: #fff;
+        border: 1px solid #f0f0f0;
+        border-radius: 30px;
+        content: "";
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+    }
+    i:after {
+        position: absolute;
+        top: 1px;
+        bottom: 1px;
+        width: 18px;
+        background-color: #fff;
+        border-radius: 50%;
+        content: "";
+        -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+        -webkit-transition: margin-left 0.3s;
+        transition: margin-left 0.3s;
+    }
+    input:checked + i:before {
+        top: 50%;
+        right: 5px;
+        bottom: 50%;
+        left: 50%;
+        border-width: 0;
+        border-radius: 5px;
+    }
+    input:checked + i:after {
+      margin-left: 16px;
+    }
+}

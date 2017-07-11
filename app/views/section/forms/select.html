@@ -1,0 +1,113 @@
+<header>
+    <h1 class="h3">Select</h1>
+</header>
+
+<section style="height: 500px;" ng-controller="selectCtrl as se">
+    <!--http://www.cnblogs.com/zhx1991/p/4579886.html-->
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="h4">单选</span>
+                </div>
+                <div class="panel-body">
+                    <select class="form-control" ng-model="se.storage.singleSelect"
+                            ng-options="[k,v] as k for (k, v) in se.Australian">
+                        <option value="">--请选择名称--</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="h4">单选组</span>
+                </div>
+                <div class="panel-body">
+                    <select class="form-control" ng-model="se.storage.singleWithGroup"
+                            ng-options="city.name as city.name group by city.group for city in se.cities">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <form class="form-horizontal">
+        <!--<div class="form-group">-->
+            <!--<label class="col-sm-3">默认选择框</label>-->
+            <!--<div class="col-sm-6">-->
+                <!--<ui-select ng-model="defaultSelect" ng-click="se.selectFun(defaultSelect)" theme="bootstrap">-->
+                    <!--<ui-select-match placeholder="列表中支持搜索...">{{ $select.selected.name }}</ui-select-match>-->
+                    <!--<ui-select-choices repeat="p in people | filter: $select.search">-->
+                        <!--<div ng-bind-html="p.name | trusted"></div>-->
+                        <!--<small ng-bind-html="p.email | trusted"></small>-->
+                    <!--</ui-select-choices>-->
+                <!--</ui-select>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="form-group">-->
+            <!--<label class="col-sm-3">多重选择</label>-->
+            <!--<div class="col-sm-6">-->
+                <!--<ui-select multiple ng-model="multipleSelect" ng-click="se.selectFun(multipleSelect)" theme="bootstrap" ng-disabled="disabled">-->
+                    <!--<ui-select-match placeholder="请选择">{{$item.name}}&lt;{{$item.email}}&gt;</ui-select-match>-->
+                    <!--<ui-select-choices group-by="someGroup" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">-->
+                        <!--<div ng-bind-html="person.name | trusted"></div>-->
+                        <!--<small>-->
+                            <!--email: {{person.email}}-->
+                            <!--age: <span>{{person.age}}</span>-->
+                        <!--</small>-->
+                    <!--</ui-select-choices>-->
+                <!--</ui-select>-->
+            <!--</div>-->
+        <!--</div>-->
+    </form>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="h4">省-市-区 联动</span>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <select class="form-control" required="" ng-model="se.china.province"
+                                    ng-options="k as k for (k, v) in se.region"
+                                    ng-change="se.china.city=null; se.china.district=null;">
+                                <option value="" ng-hide="se.region.length !== 0">省</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="form-control" required="" ng-model="se.china.city"
+                                    ng-options="k as k for (k, v) in se.region[se.china.province]"
+                                    ng-change="se.china.district=null;">
+                                <option value="" ng-hide="se.china.province !== null">市</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="form-control" required="" ng-model="se.china.district"
+                                    ng-options="v as v for (k, v) in se.region[se.china.province][se.china.city]">
+                                <option value="" ng-hide="se.china.city !== null">区</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="h4">MultiSelect</span>
+                </div>
+                <div class="panel-body">
+                    <mult-select></mult-select>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

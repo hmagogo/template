@@ -1,0 +1,26 @@
+<!-- navbar -->
+<header data-ng-include="'views/section/header.html'" class="navbar app-header"></header>
+<!-- / navbar -->
+
+<!-- aside menu -->
+<aside ui-nav data-ng-include="'views/section/asideNavbar.html'" class="app-aside"></aside>
+<!-- / aside menu -->
+
+<!-- content -->
+<section class="app-section" ui-view></section>
+<!-- / content -->
+
+<!-- footer -->
+<footer class="app-footer">
+    <a href ui-scroll="app" class="pull-right"><i class="glyphicon glyphicon-arrow-up"></i></a>
+    &copy; 2015 Copyright.
+</footer>
+<!-- / footer -->
+
+<!-- settings -->
+<div data-ng-include="'views/section/settings.html'" class="settings panel panel-default"></div>
+<!-- / settings -->
+
+<!-- bootstrap common modal -->
+<div data-ng-include="'views/model/common.html'"></div>
+<!-- /bootstrap common modal -->

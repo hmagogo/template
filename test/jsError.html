@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块</title>
+    <script>
+//        var abc = {
+//            fn() {
+//                console.log('this is fn!');
+//                return {
+//                    dv() {
+//                        console.log('this is dv!');
+//                    }
+//                }
+//            }
+//        }
+//
+//        abc.fn().dv();
+
+
+
+        function test() {
+            console.log(foo);
+            console.log(bar);
+
+            var foo = 'Hello';
+            console.log(foo);
+            var bar = function () {
+                return 'world';
+            }
+
+            function foo() {
+                return 'hello';
+            }
+            console.log(this)
+        }
+//        function test() {
+//            function quote() {
+//                return 'world';
+//            }
+//            function foo() {
+//                return 'hello';
+//            }
+//            var foo, bar;
+//            console.log(foo);   // foo function
+//            console.log(bar);   // undefined
+//
+//            foo = 'Hello';
+//            console.log(foo);   // Hello
+//            bar = quote;
+//        }
+
+        test();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器缩放</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .div1 {
+            width: 98vw;
+            font-size: 2vw;
+            /* width为 98% 时，font-size为 */
+            height: 80px;
+            margin: 10px;
+            border: 1px solid #ccc;
+
+        }
+        .div2 {
+            width: 80vw;
+            font-size: 1.5vw;
+
+            height: 80px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+        .div3 {
+            width: 50vw;
+            font-size: 1vw;
+
+            height: 80px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">这是一个Div1，字体有多大？猜中有奖 ...</div>
+    <div class="div2">这是一个Div2，字体有多大？猜中有奖 ...</div>
+    <div class="div3">这是一个Div3，字体有多大？猜中有奖 ...</div>
+
+    <p>vw：viewpoint width，视窗宽度，1vw等于视窗宽度的1%。</p>
+    <p>vh：viewpoint height，视窗高度，1vh等于视窗高度的1%。</p>
+    <p>vmin：vw和vh中较小的那个。</p>
+    <p>vmax：vw和vh中较大的那个。</p>
+</body>
+</html>

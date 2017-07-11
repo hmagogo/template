@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = {
+            num: 1,
+            show: function () {
+                console.log(this.num)
+            }
+        };
+        obj.show();
+        this.num = 2;
+        var foo = obj.show;
+        foo();
+    </script>
+</head>
+<body>
+    <input type="email"/>
+</body>
+</html>

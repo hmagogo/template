@@ -1,0 +1,120 @@
+.i-checks {
+    cursor: pointer;  // 经过时光标为手形
+
+    input {
+        opacity: 0;
+        position: absolute;
+
+        &:checked + i {
+            border-color: @color-blue;
+            &:before {
+                left: 4px;
+                top: 4px;
+                width: 10px;
+                height: 10px;
+                background-color: @color-blue;
+            }
+        }
+    }
+
+    > i {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border: 1px solid darken(@color-light, 10%);
+        background-color: #FFFFFF;
+        vertical-align: middle;
+        margin:-3px 5px 0px -20px;    // 上  右  下  左
+        position: relative;
+
+        &:before {
+            content:"";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0px;
+            height: 0px;
+            background-color: transparent;
+
+            .transition(all 0.2s);
+        }
+    }
+}
+
+.ms-container {
+    background: url(../../images/switch.png) center center no-repeat;
+    width: 100%;
+
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        clear: both;
+        min-height: 0;
+        visibility: hidden;
+    }
+
+    .ms-selectable,
+    .ms-selection {
+        width: 48%;
+        background: #fff;
+        color: #333;
+
+        li.half {
+            width: 49.55%;
+            float: left;
+            border: 1px #CCC solid;
+        }
+
+        li.ms-elem-selectable,
+        li.ms-elem-selected {
+            border-bottom: 1px #CCC solid;
+            padding: 4px 10px;
+            color: #555;
+            font-size: 11px;
+        }
+
+        li:hover {
+            background: #ccc;
+            cursor: pointer;
+        }
+    }
+
+    .ms-selectable {
+        float: left;
+    }
+
+    .ms-selection {
+        float: right;
+    }
+
+    .ms-selected {
+        display: none;
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+
+        &.ms-list {
+            height: 200px;
+            padding: 0px 0px;
+            overflow-y: auto;
+        }
+    }
+
+    .ms-list {
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+        -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+        -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+        -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+        transition: border linear 0.2s, box-shadow linear 0.2s;
+        border: 1px solid #DDD;
+    }
+
+}

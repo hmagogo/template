@@ -1,0 +1,19 @@
+
+<div id="confirmModal" class="modal fade" style="top: 40%; margin-top: -150px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width:400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title modal-title-font">{{modal.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-padding" ng-bind-html="modal.message | trusted"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" ng-click="modal.sure()">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

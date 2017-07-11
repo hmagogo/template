@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块</title>
+    <script>
+        var Module = function () {
+            this.init();
+        };
+
+        // 初始化
+        Module.prototype.init = function () {
+            console.log('.../ init');
+            // this.fetchData(function () {
+            //     // do something
+            // });
+        };
+
+        // 获取数据
+        Module.prototype.fetchData = function (cb) {
+        };
+
+        // 绑定事件
+        Module.prototype.bindEvent = function() {
+        };
+
+        // 渲染数据
+        Module.prototype.renderData = function(data) {
+            data = this._resolveData(data);
+            // ...
+            this.bindEvent();
+        };
+
+        // 处理数据
+        Module.prototype._resolveData = function() {
+          // ...
+        };
+
+        // 加载失败
+        Module.prototype._fetchDataFailed = function() {
+          // ...
+        };
+
+        /*  不管一个模块有多么简单，它基本都会包含以上步骤  */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

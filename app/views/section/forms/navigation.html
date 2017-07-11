@@ -1,0 +1,35 @@
+<header>
+    <h1 class="h3" style="font-weight:300;">Navigation</h1>
+</header>
+
+<section ng-controller="navigationCtrl as navi">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="h4">导航 01</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="breadcrumb">
+                        <li class="poi" ng-click="navi.exhibition($event, 'configView')">
+                            <span class="activeBottom">配置</span>
+                        </li>
+                        <li id="resources" class="def" ng-mouseover="navi.showSubLayer($event)" ng-mouseleave="navi.hideSubLayer($event)" flag="true">
+                            <span>存储资源</span>
+                            <span class="hideSub" ng-click="navi.exhibition($event, 'poolView')">存储池</span>
+                            <span class="hideSub" ng-click="navi.exhibition($event, 'lunView')">卷</span>
+                        </li>
+                        <li id="ISCSI" class="def" ng-mouseover="navi.showSubLayer($event)" ng-mouseleave="navi.hideSubLayer($event)" flag="true">
+                            <span>ISCSI</span>
+                            <span class="hideSub" ng-click="navi.exhibition($event, 'targetView')">ISCSI目标</span>
+                            <span class="hideSub" ng-click="navi.exhibition($event, 'startView')">ISCSI启动器</span>
+                        </li>
+                        <li id="piece" class="poi" ng-click="navi.exhibition($event, 'blockView')">
+                            <span>块设备</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
