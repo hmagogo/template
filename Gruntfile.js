@@ -8,13 +8,13 @@
 var path = require('path');
 
 module.exports = function (grunt) {
-    // 设置 node_modules 自定义目录
+    // 设置 node_modules 自定义目录  (共享 node_modules情况下)
     var node_modules = 'D:/LocalRepository/node_modules';
 
-    // 重新设置 grunt 的项目路径，并且获取当前的 package.json 文件信息
+    // 重新设置 grunt 的项目路径，并且获取当前的 package.json 文件信息  (共享 node_modules情况下)
     grunt.file.setBase(__dirname);
 
-    // 获取当前目录相对于共享 node_modules 目录的路径(以windows下面为例)
+    // 获取当前目录相对于共享 node_modules 目录的路径(以windows下面为例) (共享 node_modules情况下)
     var nodepath = path.relative(__dirname, node_modules);
 
 
@@ -23,15 +23,16 @@ module.exports = function (grunt) {
 
     // task.loadTasks 方法可以从指定的目录加载任务模块
     // task.loadNpmTasks 方法则根据当前项目下 Npm module 所在的安装目录来加载任务模块
-    // require('load-grunt-tasks')(grunt);  // 加载所有的任务，相当于一堆的 grunt.loadNpmTasks('xxx')
-    // require(path.join(nodepath, "load-grunt-tasks"))(grunt);
+    require('load-grunt-tasks')(grunt);  // 加载所有的任务，相当于一堆的 grunt.loadNpmTasks('xxx')
 
-    // 加载任务
-    grunt.task.loadTasks(path.join(nodepath, 'grunt-connect-proxy', 'tasks'));
-    grunt.task.loadTasks(path.join(nodepath, 'grunt-contrib-connect', 'tasks'));
-    grunt.task.loadTasks(path.join(nodepath, 'grunt-contrib-watch', 'tasks'));
-    grunt.task.loadTasks(path.join(nodepath, 'grunt-wiredep', 'tasks'));
-    grunt.task.loadTasks(path.join(nodepath, 'grunt-contrib-less','tasks'));
+    // require(path.join(nodepath, "load-grunt-tasks"))(grunt);  (共享 node_modules情况下)
+
+    // 加载任务  (共享 node_modules情况下)
+    // grunt.task.loadTasks(path.join(nodepath, 'grunt-connect-proxy', 'tasks'));
+    // grunt.task.loadTasks(path.join(nodepath, 'grunt-contrib-connect', 'tasks'));
+    // grunt.task.loadTasks(path.join(nodepath, 'grunt-contrib-watch', 'tasks'));
+    // grunt.task.loadTasks(path.join(nodepath, 'grunt-wiredep', 'tasks'));
+    // grunt.task.loadTasks(path.join(nodepath, 'grunt-contrib-less','tasks'));
 
     var proxySnippet = require(path.join(nodepath, 'grunt-connect-proxy/lib/utils')).proxyRequest;
 

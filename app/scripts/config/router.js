@@ -263,13 +263,37 @@
                 url: '/chart',
                 template: '<div ui-view></div>'
             })
+            .state('app.chart.canvas', {
+                url: '/canvas',
+                templateUrl: 'views/section/chart/canvas.html'
+                // ,
+                // resolve: {
+                //     deps: ['uiLoad', function(uiLoad) {
+                //         return uiLoad.load([
+                //             'scripts/controller/chart/canvasCtrl.js'
+                //         ]);
+                //     }]
+                // }
+            })
+            .state('app.chart.webgl', {
+                url: '/webgl',
+                templateUrl: 'views/section/chart/webgl.html',
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load('angularFileUpload').then(function() {
+                            return $ocLazyLoad.load('scripts/controller/chart/webglCtrl.js');
+                        });
+                    }]
+                }
+            })
             .state('app.chart.echarts', {
                 url: '/echarts',
                 templateUrl: 'views/section/chart/echarts.html',
                 resolve: {
                     deps: ['uiLoad', function(uiLoad) {
                         return uiLoad.load([
-                            'bower_components/echarts/dist/echarts.min.js',
+                            'bower_components/echarts/dist/echarts.js',
+                            'bower_components/echarts/map/js/china.js',
                             'scripts/controller/chart/echartsCtrl.js'
                         ]);
                     }]

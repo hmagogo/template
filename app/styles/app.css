@@ -93,6 +93,14 @@ body {
   color: #353535;
   border-bottom: 2px solid #ef595a;
 }
+@media (max-width: 767px) {
+  .visible-xs {
+    display: none!important;
+  }
+  .navbar-collapse.collapse {
+    display: block!important;
+  }
+}
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -308,6 +316,52 @@ body {
 .app-aside-folded .app-section,
 .app-aside-folded .app-footer {
   margin-left: 60px;
+}
+@media (max-width: 767px) {
+  .app-header .nav-header {
+    width: 0px;
+    transform: translate3d(-233px, 0px, 0px);
+    transition: all 300ms;
+  }
+  .app-header .nav-header-collapse {
+    margin-left: 0px;
+    height: auto!important;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+    transition: all 300ms;
+  }
+  .app-header .nav-header-collapse .navbar-nav {
+    float: left;
+    margin: 0px 0px;
+  }
+  .app-header .nav-header-collapse .navbar-nav > li {
+    float: left;
+  }
+  .app-header .nav-header-collapse .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .app-aside {
+    width: 0px;
+    transform: translate3d(-233px, 0px, 0px);
+    transition: all 300ms;
+  }
+  .app-aside-switch {
+    position: absolute;
+    float: left;
+    top: 50px;
+    bottom: 0;
+    width: 200px;
+    transform: translate3d(-233px, 0px, 0px);
+    transition: all 300ms;
+  }
+  .app-section {
+    margin-left: 0px;
+    transition: all 300ms;
+  }
+  .app-section-switch {
+    margin-left: 200px;
+    transition: all 300ms;
+  }
 }
 [ui-view].ng-leave {
   display: none;
@@ -678,4 +732,47 @@ body {
 }
 .webuploader-file .webuploader-pick {
   padding: 7px 15px;
+}
+
+.dialog {
+  position:relative;
+  z-index: 1060;
+  max-width: 276px;
+  padding: 1px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  line-break: auto;
+}
+
+.dialog .arrow {
+  position:absolute;
+  top:5px;
+  right:-8px; /* 圆角的位置需要细心调试哦  */
+  width:0;
+  height:0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #fff;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }

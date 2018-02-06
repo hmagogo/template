@@ -10,7 +10,7 @@ var debug = require('debug')('microblog:server');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var socketIo = require('socket.io');
+// var socketIo = require('socket.io');
 
 require('../socket');
 
@@ -42,8 +42,8 @@ httpsServer.listen(SSLPORT, function() {
     console.log('HTTPS Server is running on: https://localhost:%s', SSLPORT);
 });
 
-var io = socketIo.listen(server);   // 倾听http服务器并创建socket
-io.set('log level', 1);             // 设置日志级别
+// var io = socketIo.listen(server);   // 倾听http服务器并创建socket
+// io.set('log level', 1);             // 设置日志级别
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -75,32 +75,32 @@ function normalizePort(val) {
  * 连接后进行的处理
  */
 
-io.on('connection', function (socket) {
-    // 打印握手信息
-    //console.log(socket.handshake);
-    // 向前端发送的事件
-    socket.emit('open', 'connection client');
-
-    // 构建客户端对象
-    var client = {
-        socket: socket,
-        name: false,
-        color: getRandomColor()
-    };
-
-    // 对message事件的监听
-    socket.on('message', function (msg) {
-        var obj = {time: getNowTime(), color: client.color};
-
-        obj.text = msg;
-        obj.author = client.name;
-        obj.type = 'message';
-
-        socket.emit('message', obj);
-        // 广播向其他用户发消息
-        socket.broadcast.emit('message', obj);
-    });
-});
+// io.on('connection', function (socket) {
+//     // 打印握手信息
+//     //console.log(socket.handshake);
+//     // 向前端发送的事件
+//     socket.emit('open', 'connection client');
+//
+//     // 构建客户端对象
+//     var client = {
+//         socket: socket,
+//         name: false,
+//         color: getRandomColor()
+//     };
+//
+//     // 对message事件的监听
+//     socket.on('message', function (msg) {
+//         var obj = {time: getNowTime(), color: client.color};
+//
+//         obj.text = msg;
+//         obj.author = client.name;
+//         obj.type = 'message';
+//
+//         socket.emit('message', obj);
+//         // 广播向其他用户发消息
+//         socket.broadcast.emit('message', obj);
+//     });
+// });
 
 /**
  * Event listener for HTTP server 'error' event.

@@ -14,7 +14,8 @@ app.controller('mainController', ['$scope',
                 headerFixed: true,
                 asideFixed: true,
                 asideFolded: false
-            }
+            },
+            section: false
         };
 
         //弹出框控制器
@@ -34,6 +35,14 @@ app.controller('mainController', ['$scope',
                 if (this.sureTo) {
                     this.sureTo();
                 }
+            }
+        };
+
+        $scope.switchMenu = function () {
+            if ($scope.app.section) {
+                $scope.app.section = false;
+            } else {
+                $scope.app.section = true;
             }
         };
 

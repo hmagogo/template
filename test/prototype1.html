@@ -4,30 +4,35 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
-        var a = "global var";
+        //        var a = "global var";
+        //
+        //        function foo(){
+        //            console.log(a);
+        //        }
+        //
+        //        function outerFunc(){
+        //            var b = "var in outerFunc";
+        //            console.log(b);
+        //
+        //            function innerFunc(){
+        //                var c = "var in innerFunc";
+        //                console.log(c);
+        //                foo();
+        //            }
+        //
+        //            innerFunc();
+        //        }
 
-        function foo(){
-            console.log(a);
+
+        //        outerFunc();
+
+        function a() {
+            this.name  = 1;
         }
-
-        function outerFunc(){
-            var b = "var in outerFunc";
-            console.log(b);
-
-            function innerFunc(){
-                var c = "var in innerFunc";
-                console.log(c);
-                foo();
-            }
-
-            innerFunc();
-        }
-
-
-        outerFunc();
+        alert(new a().name)
     </script>
 </head>
 <body>
-
+    <button id="hello">sssssssss</button>
 </body>
 </html>

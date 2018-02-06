@@ -12,6 +12,8 @@ var bt = require('./data/table/bootstrapTable.js');
 var jf = require('./data/table/jqueryFlexigrid.js');
 var ec = require('./data/echartsData.js');
 
+var com = require('./common.js');
+
 var router = express.Router();
 var multipartMiddleware = multipart();
 
@@ -52,7 +54,7 @@ router.post('/backstage/add', function (req, res) {
     pool.getConnection(
         function (err, connection) {
             var sql = 'INSERT INTO test(USERNAME, PASSWORD) VALUES(?,?)';
-            var params = jsonSwitchArray(req.body.params);
+            var params = com.jsonSwitchArray(req.body.params);
             connection.query(sql, params, function (err, result) {
                 if (err) {
                     console.log('[INSERT ERROR] - ',err.message);
@@ -253,18 +255,5 @@ router.get('/table/grid', function (req, res) {
 router.get('/echart/area', function (req, res) {
     res.send(ec.area);
 });
-
-/**
- * 取出json的值，将值转成数组类型
- * @param jsonData
- * @returns {Array}
- */
-function jsonSwitchArray(jsonData) {
-    var arr = new Array();
-    for (var data in jsonData) {
-        arr.push(jsonData[data]);
-    }
-    return arr;
-}
 
 module.exports = router;
